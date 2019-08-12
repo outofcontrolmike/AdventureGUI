@@ -43,6 +43,7 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.cmboBxClass = new System.Windows.Forms.ComboBox();
+            this.lblAgeReq = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +81,7 @@
             // 
             this.lblAge.AutoSize = true;
             this.lblAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.Location = new System.Drawing.Point(17, 170);
+            this.lblAge.Location = new System.Drawing.Point(291, 163);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(38, 20);
             this.lblAge.TabIndex = 3;
@@ -100,6 +101,7 @@
             // 
             this.txtbxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbxName.Location = new System.Drawing.Point(71, 92);
+            this.txtbxName.MaxLength = 14;
             this.txtbxName.Name = "txtbxName";
             this.txtbxName.Size = new System.Drawing.Size(199, 26);
             this.txtbxName.TabIndex = 5;
@@ -108,15 +110,16 @@
             // txtbxAge
             // 
             this.txtbxAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxAge.Location = new System.Drawing.Point(71, 170);
+            this.txtbxAge.Location = new System.Drawing.Point(365, 157);
+            this.txtbxAge.MaxLength = 3;
             this.txtbxAge.Name = "txtbxAge";
-            this.txtbxAge.Size = new System.Drawing.Size(199, 26);
+            this.txtbxAge.Size = new System.Drawing.Size(63, 26);
             this.txtbxAge.TabIndex = 6;
             this.txtbxAge.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
             // txtArea
             // 
-            this.txtArea.Font = new System.Drawing.Font("Viner Hand ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtArea.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtArea.Location = new System.Drawing.Point(570, 92);
             this.txtArea.Name = "txtArea";
             this.txtArea.ReadOnly = true;
@@ -144,7 +147,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(328, 159);
+            this.pictureBox1.Location = new System.Drawing.Point(328, 239);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(211, 179);
             this.pictureBox1.TabIndex = 9;
@@ -188,12 +191,23 @@
             this.cmboBxClass.TabIndex = 10;
             this.cmboBxClass.SelectedIndexChanged += new System.EventHandler(this.CmboBxClass_SelectedIndexChanged);
             // 
+            // lblAgeReq
+            // 
+            this.lblAgeReq.AutoSize = true;
+            this.lblAgeReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgeReq.Location = new System.Drawing.Point(67, 163);
+            this.lblAgeReq.Name = "lblAgeReq";
+            this.lblAgeReq.Size = new System.Drawing.Size(75, 20);
+            this.lblAgeReq.TabIndex = 13;
+            this.lblAgeReq.Text = "Age Limit";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(938, 517);
+            this.Controls.Add(this.lblAgeReq);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.cmboBxClass);
@@ -233,6 +247,7 @@
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.ComboBox cmboBxClass;
+        private System.Windows.Forms.Label lblAgeReq;
     }
 }
 

@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Armor.cs" />
-    <Compile Include="CharacterBuild.cs" />
+    <Compile Include="CharacterSheet.cs" />
     <Compile Include="Enemies.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
