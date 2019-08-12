@@ -33,16 +33,16 @@
             this.lblRace = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
             this.lblClass = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtbxName = new System.Windows.Forms.TextBox();
+            this.txtbxAge = new System.Windows.Forms.TextBox();
             this.txtArea = new System.Windows.Forms.RichTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmboBxRace = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmboBxClass = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +60,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(25, 92);
+            this.lblName.Location = new System.Drawing.Point(14, 92);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(51, 20);
             this.lblName.TabIndex = 1;
@@ -70,7 +70,7 @@
             // 
             this.lblRace.AutoSize = true;
             this.lblRace.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRace.Location = new System.Drawing.Point(25, 165);
+            this.lblRace.Location = new System.Drawing.Point(291, 93);
             this.lblRace.Name = "lblRace";
             this.lblRace.Size = new System.Drawing.Size(47, 20);
             this.lblRace.TabIndex = 2;
@@ -80,7 +80,7 @@
             // 
             this.lblAge.AutoSize = true;
             this.lblAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.Location = new System.Drawing.Point(293, 165);
+            this.lblAge.Location = new System.Drawing.Point(17, 170);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(38, 20);
             this.lblAge.TabIndex = 3;
@@ -90,28 +90,29 @@
             // 
             this.lblClass.AutoSize = true;
             this.lblClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClass.Location = new System.Drawing.Point(24, 288);
+            this.lblClass.Location = new System.Drawing.Point(17, 239);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(48, 20);
             this.lblClass.TabIndex = 4;
             this.lblClass.Text = "Class";
             // 
-            // textBox1
+            // txtbxName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(99, 92);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(285, 26);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.txtbxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxName.Location = new System.Drawing.Point(71, 92);
+            this.txtbxName.Name = "txtbxName";
+            this.txtbxName.Size = new System.Drawing.Size(199, 26);
+            this.txtbxName.TabIndex = 5;
+            this.txtbxName.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
-            // textBox2
+            // txtbxAge
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(337, 165);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(47, 26);
-            this.textBox2.TabIndex = 6;
+            this.txtbxAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbxAge.Location = new System.Drawing.Point(71, 170);
+            this.txtbxAge.Name = "txtbxAge";
+            this.txtbxAge.Size = new System.Drawing.Size(199, 26);
+            this.txtbxAge.TabIndex = 6;
+            this.txtbxAge.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
             // txtArea
             // 
@@ -124,23 +125,26 @@
             this.txtArea.Text = "This is an interaction TextArea.  Certain parts of the form will display here dep" +
     "ending on your set up.";
             // 
-            // comboBox1
+            // cmboBxRace
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmboBxRace.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmboBxRace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboBxRace.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmboBxRace.FormattingEnabled = true;
+            this.cmboBxRace.Items.AddRange(new object[] {
             "Human",
             "Elf",
             "Dwarf",
             "Hobbit"});
-            this.comboBox1.Location = new System.Drawing.Point(99, 164);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 8;
+            this.cmboBxRace.Location = new System.Drawing.Point(365, 93);
+            this.cmboBxRace.Name = "cmboBxRace";
+            this.cmboBxRace.Size = new System.Drawing.Size(143, 28);
+            this.cmboBxRace.TabIndex = 8;
+            this.cmboBxRace.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(297, 304);
+            this.pictureBox1.Location = new System.Drawing.Point(328, 159);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(211, 179);
             this.pictureBox1.TabIndex = 9;
@@ -149,7 +153,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(28, 443);
+            this.btnSubmit.Location = new System.Drawing.Point(71, 447);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(98, 40);
             this.btnSubmit.TabIndex = 11;
@@ -160,26 +164,29 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(144, 443);
+            this.btnReset.Location = new System.Drawing.Point(187, 447);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(98, 40);
             this.btnReset.TabIndex = 12;
             this.btnReset.Text = "Reset ";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
-            // comboBox2
+            // cmboBxClass
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmboBxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmboBxClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmboBxClass.FormattingEnabled = true;
+            this.cmboBxClass.Items.AddRange(new object[] {
             "Warrior",
             "Mage",
             "Theif",
             "Cleric"});
-            this.comboBox2.Location = new System.Drawing.Point(99, 287);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 28);
-            this.comboBox2.TabIndex = 10;
+            this.cmboBxClass.Location = new System.Drawing.Point(71, 236);
+            this.cmboBxClass.Name = "cmboBxClass";
+            this.cmboBxClass.Size = new System.Drawing.Size(199, 28);
+            this.cmboBxClass.TabIndex = 10;
+            this.cmboBxClass.SelectedIndexChanged += new System.EventHandler(this.CmboBxClass_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -189,12 +196,12 @@
             this.ClientSize = new System.Drawing.Size(938, 517);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmboBxClass);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmboBxRace);
             this.Controls.Add(this.txtArea);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtbxAge);
+            this.Controls.Add(this.txtbxName);
             this.Controls.Add(this.lblClass);
             this.Controls.Add(this.lblAge);
             this.Controls.Add(this.lblRace);
@@ -216,16 +223,16 @@
         private System.Windows.Forms.Label lblRace;
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.Label lblClass;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtbxName;
+        private System.Windows.Forms.TextBox txtbxAge;
         private System.Windows.Forms.RichTextBox txtArea;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmboBxRace;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmboBxClass;
     }
 }
 
