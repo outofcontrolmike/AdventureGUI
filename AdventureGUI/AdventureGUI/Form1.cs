@@ -17,8 +17,6 @@ namespace AdventureGUI
     public partial class Form1 : Form
     {
 
-        private static int age;
-        private static string pClass = "";
 
         private static Weapon wStWeapon = new Weapon();
         private static Armor wStArmor = new Armor();
@@ -38,6 +36,9 @@ namespace AdventureGUI
         private void Form1_Load(object sender, EventArgs e)
         {
             txtbxAge.Enabled = false;
+            cmboBxClass.Enabled = false;
+            btnSubmit.Enabled = false;
+            cmboBxRace.Enabled = false;
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
@@ -46,6 +47,12 @@ namespace AdventureGUI
 
             txtArea.Text = "Hello, " + name + "!";
             playerSheet.Name = name;
+            cmboBxRace.Enabled = true;
+
+            if( name == "")
+            {
+                cmboBxRace.Enabled = false;
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -87,10 +94,52 @@ namespace AdventureGUI
             playerSheet.Race = race;
         }// end Age
 
+        /// <summary>
+        ///handles what happens in age textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox2_TextChanged(object sender, EventArgs e)
         {
+
+
+           if(cmboBxRace.Text == "Human") { 
+
+              
+                {
+                    cmboBxClass.Enabled = true;
+                }
+            }
+
+
+
+                if (cmboBxRace.Text == "Elf" && Convert.ToInt32(txtbxAge.Text) <= 700 && Convert.ToInt32(txtbxAge.Text) >= 300)
+
+                {
+                    cmboBxClass.Enabled = true;
+
+                }
+
+                if (cmboBxRace.Text == "Dwarf" && Convert.ToInt32(txtbxAge.Text) <= 300 && Convert.ToInt32(txtbxAge.Text) >= 100)
+                {
+                    cmboBxClass.Enabled = true;
+
+                }
+
+                if (cmboBxRace.Text == "Hobbit" && Convert.ToInt32(txtbxAge.Text) <= 90 && Convert.ToInt32(txtbxAge.Text) >= 22)
+                {
+                    cmboBxClass.Enabled = true;
+
+                }
+                 
+                
             
             
+
+
+
+
+
         }
 
         private void BtnReset_Click(object sender, EventArgs e)
@@ -101,14 +150,29 @@ namespace AdventureGUI
             cmboBxClass.SelectedIndex = -1;
             cmboBxRace.SelectedIndex = -1;
             txtbxAge.Text = "";
+           
+
             txtbxAge.Enabled = false;
+            cmboBxClass.Enabled = false;
+            btnSubmit.Enabled = false;
+            lblAgeReq.Text = "Age Limit";
 
         }
 
         private void CmboBxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmboBxClass.Text == "Warrior")
+
+
+
+            btnSubmit.Enabled = true;
+
+            if (cmboBxClass.Text == "Warrior")
             {
+                string charclass = cmboBxClass.Text;
+
+                playerSheet.CharClass = charclass;
+
+                 
                 wStWeapon.Wname = "Broad Sword";
                 wStWeapon.AttackPower = 20;
                 wStWeapon.WDescription = "A nice broadsword to slay with";
@@ -130,7 +194,7 @@ namespace AdventureGUI
                 int constitution = 15;
 
 
-                playerSheet.CharClass = pClass;
+                playerSheet.CharClass = cmboBxClass.SelectedText;
                 playerSheet.Age = Convert.ToInt32(txtbxAge.Text);
                 playerSheet.Level = 1;
                 playerSheet.Experience = 0;
@@ -153,6 +217,10 @@ namespace AdventureGUI
                 playerSheet.MagicPower = Convert.ToInt32(Math.Ceiling(1.5 * intelligence));
 
 
+                string charClass = cmboBxClass.Text;
+                playerSheet.CharClass = charClass;
+
+                //Text Area Like a to string
                 txtArea.Text = "Name: " + playerSheet.Name +
                               "\nRace: " + playerSheet.Race +
                               "\nClass: " + playerSheet.CharClass +
@@ -176,14 +244,14 @@ namespace AdventureGUI
 
 
 
-            }
+            }// End Warrior
         }//end combo box for race
 
-        public static void setUp()
-        {
-           
-        }
 
+        private static void GetAge()
+        {
+         
+        }
         /// <summary>
         /// Get's Equipment Details 
         /// </summary>
