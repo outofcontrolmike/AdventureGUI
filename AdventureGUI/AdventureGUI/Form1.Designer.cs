@@ -32,7 +32,6 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblRace = new System.Windows.Forms.Label();
-            this.lblAge = new System.Windows.Forms.Label();
             this.lblClass = new System.Windows.Forms.Label();
             this.txtbxName = new System.Windows.Forms.TextBox();
             this.txtArea = new System.Windows.Forms.RichTextBox();
@@ -48,6 +47,8 @@
             this.lblAgeSlide = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnView = new System.Windows.Forms.Button();
+            this.btnViewSpell = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAge)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Viner Hand ITC", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Viner Hand ITC", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(319, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(285, 52);
@@ -65,60 +66,52 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(14, 92);
+            this.lblName.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(19, 87);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(51, 20);
+            this.lblName.Size = new System.Drawing.Size(66, 31);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Name";
             // 
             // lblRace
             // 
             this.lblRace.AutoSize = true;
-            this.lblRace.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRace.Location = new System.Drawing.Point(291, 93);
+            this.lblRace.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRace.Location = new System.Drawing.Point(304, 92);
             this.lblRace.Name = "lblRace";
-            this.lblRace.Size = new System.Drawing.Size(47, 20);
+            this.lblRace.Size = new System.Drawing.Size(55, 31);
             this.lblRace.TabIndex = 2;
             this.lblRace.Text = "Race\r\n";
-            // 
-            // lblAge
-            // 
-            this.lblAge.AutoSize = true;
-            this.lblAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.Location = new System.Drawing.Point(291, 163);
-            this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(38, 20);
-            this.lblAge.TabIndex = 3;
-            this.lblAge.Text = "Age";
             // 
             // lblClass
             // 
             this.lblClass.AutoSize = true;
-            this.lblClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClass.Location = new System.Drawing.Point(17, 239);
+            this.lblClass.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClass.Location = new System.Drawing.Point(300, 168);
             this.lblClass.Name = "lblClass";
-            this.lblClass.Size = new System.Drawing.Size(48, 20);
+            this.lblClass.Size = new System.Drawing.Size(59, 31);
             this.lblClass.TabIndex = 4;
             this.lblClass.Text = "Class";
             // 
             // txtbxName
             // 
             this.txtbxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxName.Location = new System.Drawing.Point(71, 92);
+            this.txtbxName.Location = new System.Drawing.Point(99, 92);
             this.txtbxName.MaxLength = 14;
             this.txtbxName.Name = "txtbxName";
-            this.txtbxName.Size = new System.Drawing.Size(199, 26);
+            this.txtbxName.Size = new System.Drawing.Size(167, 26);
             this.txtbxName.TabIndex = 5;
             this.txtbxName.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // txtArea
             // 
+            this.txtArea.BackColor = System.Drawing.Color.Snow;
             this.txtArea.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtArea.ForeColor = System.Drawing.Color.Black;
             this.txtArea.Location = new System.Drawing.Point(570, 92);
             this.txtArea.Name = "txtArea";
             this.txtArea.ReadOnly = true;
-            this.txtArea.Size = new System.Drawing.Size(356, 375);
+            this.txtArea.Size = new System.Drawing.Size(356, 413);
             this.txtArea.TabIndex = 7;
             this.txtArea.Text = "This is an interaction TextArea.  Certain parts of the form will display here dep" +
     "ending on your set up.";
@@ -134,29 +127,35 @@
             "Elf",
             "Dwarf",
             "Hobbit"});
-            this.cmboBxRace.Location = new System.Drawing.Point(365, 93);
+            this.cmboBxRace.Location = new System.Drawing.Point(365, 92);
             this.cmboBxRace.Name = "cmboBxRace";
-            this.cmboBxRace.Size = new System.Drawing.Size(143, 28);
+            this.cmboBxRace.Size = new System.Drawing.Size(162, 28);
             this.cmboBxRace.TabIndex = 8;
             this.cmboBxRace.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(56, 427);
+            this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSubmit.FlatAppearance.BorderSize = 10;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnSubmit.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.Location = new System.Drawing.Point(401, 412);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(98, 40);
+            this.btnSubmit.Size = new System.Drawing.Size(127, 71);
             this.btnSubmit.TabIndex = 11;
-            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.Text = "View Stats";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.Button1_Click);
             // 
             // btnReset
             // 
-            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(172, 427);
+            this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnReset.FlatAppearance.BorderSize = 10;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnReset.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(158, 412);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(98, 40);
+            this.btnReset.Size = new System.Drawing.Size(120, 71);
             this.btnReset.TabIndex = 12;
             this.btnReset.Text = "Reset ";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -172,25 +171,25 @@
             "Mage",
             "Theif",
             "Cleric"});
-            this.cmboBxClass.Location = new System.Drawing.Point(71, 236);
+            this.cmboBxClass.Location = new System.Drawing.Point(365, 168);
             this.cmboBxClass.Name = "cmboBxClass";
-            this.cmboBxClass.Size = new System.Drawing.Size(199, 28);
+            this.cmboBxClass.Size = new System.Drawing.Size(162, 28);
             this.cmboBxClass.TabIndex = 10;
             this.cmboBxClass.SelectedIndexChanged += new System.EventHandler(this.CmboBxClass_SelectedIndexChanged);
             // 
             // lblAgeReq
             // 
             this.lblAgeReq.AutoSize = true;
-            this.lblAgeReq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgeReq.Location = new System.Drawing.Point(67, 163);
+            this.lblAgeReq.Font = new System.Drawing.Font("Viner Hand ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgeReq.Location = new System.Drawing.Point(16, 168);
             this.lblAgeReq.Name = "lblAgeReq";
-            this.lblAgeReq.Size = new System.Drawing.Size(75, 20);
+            this.lblAgeReq.Size = new System.Drawing.Size(88, 26);
             this.lblAgeReq.TabIndex = 13;
             this.lblAgeReq.Text = "Age Limit";
             // 
             // tbAge
             // 
-            this.tbAge.Location = new System.Drawing.Point(365, 163);
+            this.tbAge.Location = new System.Drawing.Point(123, 168);
             this.tbAge.Maximum = 100;
             this.tbAge.Minimum = 10;
             this.tbAge.Name = "tbAge";
@@ -202,47 +201,80 @@
             // lblAgeSlide
             // 
             this.lblAgeSlide.AutoSize = true;
-            this.lblAgeSlide.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgeSlide.Location = new System.Drawing.Point(411, 188);
+            this.lblAgeSlide.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgeSlide.Location = new System.Drawing.Point(152, 207);
             this.lblAgeSlide.Name = "lblAgeSlide";
-            this.lblAgeSlide.Size = new System.Drawing.Size(50, 20);
+            this.lblAgeSlide.Size = new System.Drawing.Size(67, 31);
             this.lblAgeSlide.TabIndex = 16;
             this.lblAgeSlide.Text = "Value";
             // 
             // btnView
             // 
-            this.btnView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnView.Location = new System.Drawing.Point(365, 427);
+            this.btnView.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnView.FlatAppearance.BorderSize = 10;
+            this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnView.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnView.Location = new System.Drawing.Point(401, 335);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(143, 40);
+            this.btnView.Size = new System.Drawing.Size(127, 71);
             this.btnView.TabIndex = 17;
             this.btnView.Text = "View Equipment";
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.Button1_Click_1);
             // 
+            // btnViewSpell
+            // 
+            this.btnViewSpell.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnViewSpell.FlatAppearance.BorderSize = 10;
+            this.btnViewSpell.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnViewSpell.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewSpell.Location = new System.Drawing.Point(401, 258);
+            this.btnViewSpell.Name = "btnViewSpell";
+            this.btnViewSpell.Size = new System.Drawing.Size(127, 71);
+            this.btnViewSpell.TabIndex = 19;
+            this.btnViewSpell.Text = "View Spells";
+            this.btnViewSpell.UseVisualStyleBackColor = true;
+            this.btnViewSpell.Visible = false;
+            this.btnViewSpell.Click += new System.EventHandler(this.BtnViewSpell_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnNext.FlatAppearance.BorderSize = 10;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnNext.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Location = new System.Drawing.Point(21, 412);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(120, 71);
+            this.btnNext.TabIndex = 20;
+            this.btnNext.Text = "Continue";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.BtnNext_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(938, 517);
-            this.Controls.Add(this.btnView);
             this.Controls.Add(this.lblAgeSlide);
             this.Controls.Add(this.tbAge);
             this.Controls.Add(this.lblAgeReq);
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.cmboBxClass);
             this.Controls.Add(this.cmboBxRace);
             this.Controls.Add(this.txtArea);
             this.Controls.Add(this.txtbxName);
             this.Controls.Add(this.lblClass);
-            this.Controls.Add(this.lblAge);
             this.Controls.Add(this.lblRace);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnViewSpell);
+            this.Controls.Add(this.btnView);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnSubmit);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Adventure GUI";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAge)).EndInit();
@@ -256,7 +288,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblRace;
-        private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.Label lblClass;
         private System.Windows.Forms.TextBox txtbxName;
         private System.Windows.Forms.RichTextBox txtArea;
@@ -272,6 +303,8 @@
         private System.Windows.Forms.Label lblAgeSlide;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnView;
+        private System.Windows.Forms.Button btnViewSpell;
+        private System.Windows.Forms.Button btnNext;
     }
 }
 
