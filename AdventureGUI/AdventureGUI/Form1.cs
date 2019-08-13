@@ -31,6 +31,8 @@ namespace AdventureGUI
         public Form1()
         {
             InitializeComponent();
+
+         
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -39,6 +41,9 @@ namespace AdventureGUI
             cmboBxClass.Enabled = false;
             btnSubmit.Enabled = false;
             cmboBxRace.Enabled = false;
+
+           
+
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
@@ -58,121 +63,16 @@ namespace AdventureGUI
         private void Button1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        /// <summary>
-        /// Controls age textbox
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
             
-            txtbxAge.Enabled = true;
-           if(cmboBxRace.Text == "Human")
-            {
-                
-                lblAgeReq.Text = "Enter between 15-70";
-            }
-           if(lblAge.Text == "Elf")
-            {
-                lblAgeReq.Text = "Enter between 300-700";
-            }
-           if(cmboBxRace.Text == "Dwarf")
-            {
-                lblAgeReq.Text = "Enter between 100-300";
-            }
-           if(cmboBxRace.Text == "Hobbit")
-            {
-                lblAgeReq.Text = "Enter between 22-90";
-            }
-
-
-
-
-            string race = cmboBxRace.Text;
-            playerSheet.Race = race;
-        }// end Age
-
-        /// <summary>
-        ///handles what happens in age textbox
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-
-           if(cmboBxRace.Text == "Human") { 
-
-              
-                {
-                    cmboBxClass.Enabled = true;
-                }
-            }
-
-
-
-                if (cmboBxRace.Text == "Elf" && Convert.ToInt32(txtbxAge.Text) <= 700 && Convert.ToInt32(txtbxAge.Text) >= 300)
-
-                {
-                    cmboBxClass.Enabled = true;
-
-                }
-
-                if (cmboBxRace.Text == "Dwarf" && Convert.ToInt32(txtbxAge.Text) <= 300 && Convert.ToInt32(txtbxAge.Text) >= 100)
-                {
-                    cmboBxClass.Enabled = true;
-
-                }
-
-                if (cmboBxRace.Text == "Hobbit" && Convert.ToInt32(txtbxAge.Text) <= 90 && Convert.ToInt32(txtbxAge.Text) >= 22)
-                {
-                    cmboBxClass.Enabled = true;
-
-                }
-                 
-                
-            
-            
-
-
-
-
-
-        }
-
-        private void BtnReset_Click(object sender, EventArgs e)
-        {
-            txtbxName.Clear();
-            txtArea.Text = "You reset the character build.  Choose Wisley";
-            
-            cmboBxClass.SelectedIndex = -1;
-            cmboBxRace.SelectedIndex = -1;
-            txtbxAge.Text = "";
-           
-
-            txtbxAge.Enabled = false;
-            cmboBxClass.Enabled = false;
-            btnSubmit.Enabled = false;
-            lblAgeReq.Text = "Age Limit";
-
-        }
-
-        private void CmboBxClass_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-
-            btnSubmit.Enabled = true;
 
             if (cmboBxClass.Text == "Warrior")
             {
+                btnSubmit.Enabled = true;
                 string charclass = cmboBxClass.Text;
 
                 playerSheet.CharClass = charclass;
 
-                 
+
                 wStWeapon.Wname = "Broad Sword";
                 wStWeapon.AttackPower = 20;
                 wStWeapon.WDescription = "A nice broadsword to slay with";
@@ -242,9 +142,110 @@ namespace AdventureGUI
                                "\n\nWeapon Equiped " + playerSheet.EquipedWeapon +
                                "\nArmor Equiped " + playerSheet.EquipedArmor;
 
-
-
             }// End Warrior
+           
+
+        }
+
+        /// <summary>
+        /// Controls age textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            txtbxAge.Enabled = true;
+           if(cmboBxRace.Text == "Human")
+            {
+                
+                lblAgeReq.Text = "Enter between 15-70";
+            }
+           if(cmboBxRace.Text == "Elf")
+            {
+                lblAgeReq.Text = "Enter between 300-700";
+            }
+           if(cmboBxRace.Text == "Dwarf")
+            {
+                lblAgeReq.Text = "Enter between 100-300";
+            }
+           if(cmboBxRace.Text == "Hobbit")
+            {
+                lblAgeReq.Text = "Enter between 22-90";
+            }
+
+
+
+
+            string race = cmboBxRace.Text;
+            playerSheet.Race = race;
+        }// end Age
+
+        /// <summary>
+        ///handles what happens in age textbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+          if(txtbxAge.Text != "")
+            {
+                cmboBxClass.Enabled = true;
+            }
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            txtbxName.Clear();
+            txtArea.Text = "You reset the character build.  Choose Wisley";
+            
+            cmboBxClass.SelectedIndex = -1;
+            cmboBxRace.SelectedIndex = -1;
+            txtbxAge.Text = "";
+           
+
+            txtbxAge.Enabled = false;
+            cmboBxClass.Enabled = false;
+            btnSubmit.Enabled = false;
+            lblAgeReq.Text = "Age Limit";
+
+        }
+
+        private void CmboBxClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSubmit.Enabled = true;
+            if (cmboBxRace.Text == "Human" && Convert.ToInt32(txtbxAge.Text) < 15 && Convert.ToInt32(txtbxAge.Text) > 70)
+            {
+                
+                txtArea.Text = "enter correct age.";
+
+            }
+
+            if (cmboBxRace.Text == "Elf" && Convert.ToInt32(txtbxAge.Text) <= 700 && Convert.ToInt32(txtbxAge.Text) >= 300)
+
+            {
+                cmboBxClass.Enabled = true;
+
+            }
+
+            if (cmboBxRace.Text == "Elf" && Convert.ToInt32(txtbxAge.Text) < 300 && Convert.ToInt32(txtbxAge.Text) > 700)
+            {
+                cmboBxClass.Enabled = false;
+            }
+
+
+            if (cmboBxRace.Text == "Dwarf" && Convert.ToInt32(txtbxAge.Text) <= 300 && Convert.ToInt32(txtbxAge.Text) >= 100)
+            {
+                cmboBxClass.Enabled = true;
+
+            }
+
+            if (cmboBxRace.Text == "Hobbit" && Convert.ToInt32(txtbxAge.Text) <= 90 && Convert.ToInt32(txtbxAge.Text) >= 22)
+            {
+                cmboBxClass.Enabled = true;
+
+            }
+
         }//end combo box for race
 
 
