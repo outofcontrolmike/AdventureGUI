@@ -18,7 +18,7 @@ namespace AdventureGUI
     {
 
 
-        private static Weapon wStWeapon = new Weapon();
+         Weapon wStWeapon = new Weapon();
         private static Armor wStArmor = new Armor();
         private static Items startingItem = new Items();
 
@@ -35,17 +35,26 @@ namespace AdventureGUI
          
         }
 
+        /// <summary>
+        /// What happens when form loads
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
-            txtbxAge.Enabled = false;
+   
             cmboBxClass.Enabled = false;
             btnSubmit.Enabled = false;
             cmboBxRace.Enabled = false;
-
-           
-
+            tbAge.Enabled = false;
+            btnView.Enabled = false;
         }
 
+        /// <summary>
+        /// This Binds the name and Text area together for fun
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
           string name = txtbxName.Text;
@@ -60,9 +69,20 @@ namespace AdventureGUI
             }
         }
 
+        /// <summary>
+        /// Action event for submit button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            
+            txtbxName.Enabled = false;
+            cmboBxClass.Enabled = false;
+            cmboBxRace.Enabled = false;
+            btnSubmit.Enabled = false;
+            tbAge.Enabled = false;
+            btnView.Enabled = true;
             
 
             if (cmboBxClass.Text == "Warrior")
@@ -95,7 +115,7 @@ namespace AdventureGUI
 
 
                 playerSheet.CharClass = cmboBxClass.SelectedText;
-                playerSheet.Age = Convert.ToInt32(txtbxAge.Text);
+                playerSheet.Age = Convert.ToInt32(tbAge.Value);
                 playerSheet.Level = 1;
                 playerSheet.Experience = 0;
                 playerSheet.NextLevel = 1000;
@@ -147,6 +167,7 @@ namespace AdventureGUI
 
         }
 
+        
         /// <summary>
         /// Controls age textbox
         /// </summary>
@@ -155,27 +176,27 @@ namespace AdventureGUI
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            txtbxAge.Enabled = true;
+            tbAge.Enabled = true;
            if(cmboBxRace.Text == "Human")
             {
-                
+                tbAge.SetRange(15, 70);
                 lblAgeReq.Text = "Enter between 15-70";
             }
            if(cmboBxRace.Text == "Elf")
             {
+                tbAge.SetRange(300, 700);
                 lblAgeReq.Text = "Enter between 300-700";
             }
            if(cmboBxRace.Text == "Dwarf")
             {
+                tbAge.SetRange(100, 300);
                 lblAgeReq.Text = "Enter between 100-300";
             }
            if(cmboBxRace.Text == "Hobbit")
             {
+                tbAge.SetRange(22, 90);
                 lblAgeReq.Text = "Enter between 22-90";
             }
-
-
-
 
             string race = cmboBxRace.Text;
             playerSheet.Race = race;
@@ -188,12 +209,17 @@ namespace AdventureGUI
         /// <param name="e"></param>
         private void TextBox2_TextChanged(object sender, EventArgs e)
         {
-          if(txtbxAge.Text != "")
+          if(tbAge.Text != "")
             {
                 cmboBxClass.Enabled = true;
             }
         }
 
+        /// <summary>
+        /// Action event for resetting the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnReset_Click(object sender, EventArgs e)
         {
             txtbxName.Clear();
@@ -201,50 +227,28 @@ namespace AdventureGUI
             
             cmboBxClass.SelectedIndex = -1;
             cmboBxRace.SelectedIndex = -1;
-            txtbxAge.Text = "";
+            tbAge.Text = "";
            
 
-            txtbxAge.Enabled = false;
+            tbAge.Enabled = false;
             cmboBxClass.Enabled = false;
             btnSubmit.Enabled = false;
             lblAgeReq.Text = "Age Limit";
+            txtbxName.Enabled = true;
+            lblAgeSlide.Text = "Age Meter";
+            btnView.Enabled = false;
 
         }
 
+        /// <summary>
+        /// Action event for Selected index of Character Class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CmboBxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             btnSubmit.Enabled = true;
-            if (cmboBxRace.Text == "Human" && Convert.ToInt32(txtbxAge.Text) < 15 && Convert.ToInt32(txtbxAge.Text) > 70)
-            {
-                
-                txtArea.Text = "enter correct age.";
-
-            }
-
-            if (cmboBxRace.Text == "Elf" && Convert.ToInt32(txtbxAge.Text) <= 700 && Convert.ToInt32(txtbxAge.Text) >= 300)
-
-            {
-                cmboBxClass.Enabled = true;
-
-            }
-
-            if (cmboBxRace.Text == "Elf" && Convert.ToInt32(txtbxAge.Text) < 300 && Convert.ToInt32(txtbxAge.Text) > 700)
-            {
-                cmboBxClass.Enabled = false;
-            }
-
-
-            if (cmboBxRace.Text == "Dwarf" && Convert.ToInt32(txtbxAge.Text) <= 300 && Convert.ToInt32(txtbxAge.Text) >= 100)
-            {
-                cmboBxClass.Enabled = true;
-
-            }
-
-            if (cmboBxRace.Text == "Hobbit" && Convert.ToInt32(txtbxAge.Text) <= 90 && Convert.ToInt32(txtbxAge.Text) >= 22)
-            {
-                cmboBxClass.Enabled = true;
-
-            }
 
         }//end combo box for race
 
@@ -256,16 +260,26 @@ namespace AdventureGUI
         /// <summary>
         /// Get's Equipment Details 
         /// </summary>
-        public static void GetEquipment()
+      
+
+      
+
+        private void TbAge_Scroll(object sender, EventArgs e)
         {
-           
-         
-                wStWeapon.ToString();
-                WriteLine("\n");
-                WriteLine("-----------------------------------------------------------------------------");
-                wStArmor.ToString();
-               
-               
-            }
-        }// End GetEquipment
+            lblAgeSlide.Text = Convert.ToString(tbAge.Value);
+            cmboBxClass.Enabled = true;
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            txtArea.Clear();
+
+            txtArea.Text = "Weapon Name: " + wStWeapon.Wname +
+                "\nAttack Power: " + wStWeapon.AttackPower +
+                "\nGold Value: " + wStWeapon.Gvalue +
+                "\nDescription: " + wStWeapon.WDescription;
+
+            // Work on Armor
+        }
+    }// End GetEquipment
     }

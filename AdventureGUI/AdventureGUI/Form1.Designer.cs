@@ -28,23 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblRace = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
             this.lblClass = new System.Windows.Forms.Label();
             this.txtbxName = new System.Windows.Forms.TextBox();
-            this.txtbxAge = new System.Windows.Forms.TextBox();
             this.txtArea = new System.Windows.Forms.RichTextBox();
             this.cmboBxRace = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.cmboBxClass = new System.Windows.Forms.ComboBox();
             this.lblAgeReq = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbAge = new System.Windows.Forms.TrackBar();
+            this.lblAgeSlide = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnView = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAge)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -107,16 +112,6 @@
             this.txtbxName.TabIndex = 5;
             this.txtbxName.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
-            // txtbxAge
-            // 
-            this.txtbxAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbxAge.Location = new System.Drawing.Point(365, 157);
-            this.txtbxAge.MaxLength = 3;
-            this.txtbxAge.Name = "txtbxAge";
-            this.txtbxAge.Size = new System.Drawing.Size(63, 26);
-            this.txtbxAge.TabIndex = 6;
-            this.txtbxAge.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
-            // 
             // txtArea
             // 
             this.txtArea.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,18 +140,10 @@
             this.cmboBxRace.TabIndex = 8;
             this.cmboBxRace.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(328, 239);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(211, 179);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(71, 447);
+            this.btnSubmit.Location = new System.Drawing.Point(56, 427);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(98, 40);
             this.btnSubmit.TabIndex = 11;
@@ -167,7 +154,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(187, 447);
+            this.btnReset.Location = new System.Drawing.Point(172, 427);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(98, 40);
             this.btnReset.TabIndex = 12;
@@ -201,20 +188,53 @@
             this.lblAgeReq.TabIndex = 13;
             this.lblAgeReq.Text = "Age Limit";
             // 
+            // tbAge
+            // 
+            this.tbAge.Location = new System.Drawing.Point(365, 163);
+            this.tbAge.Maximum = 100;
+            this.tbAge.Minimum = 10;
+            this.tbAge.Name = "tbAge";
+            this.tbAge.Size = new System.Drawing.Size(143, 45);
+            this.tbAge.TabIndex = 15;
+            this.tbAge.Value = 10;
+            this.tbAge.Scroll += new System.EventHandler(this.TbAge_Scroll);
+            // 
+            // lblAgeSlide
+            // 
+            this.lblAgeSlide.AutoSize = true;
+            this.lblAgeSlide.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgeSlide.Location = new System.Drawing.Point(411, 188);
+            this.lblAgeSlide.Name = "lblAgeSlide";
+            this.lblAgeSlide.Size = new System.Drawing.Size(50, 20);
+            this.lblAgeSlide.TabIndex = 16;
+            this.lblAgeSlide.Text = "Value";
+            // 
+            // btnView
+            // 
+            this.btnView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnView.Location = new System.Drawing.Point(365, 427);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(143, 40);
+            this.btnView.TabIndex = 17;
+            this.btnView.Text = "View Equipment";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.Button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(938, 517);
+            this.Controls.Add(this.btnView);
+            this.Controls.Add(this.lblAgeSlide);
+            this.Controls.Add(this.tbAge);
             this.Controls.Add(this.lblAgeReq);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.cmboBxClass);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmboBxRace);
             this.Controls.Add(this.txtArea);
-            this.Controls.Add(this.txtbxAge);
             this.Controls.Add(this.txtbxName);
             this.Controls.Add(this.lblClass);
             this.Controls.Add(this.lblAge);
@@ -224,7 +244,8 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbAge)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,16 +259,19 @@
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.Label lblClass;
         private System.Windows.Forms.TextBox txtbxName;
-        private System.Windows.Forms.TextBox txtbxAge;
         private System.Windows.Forms.RichTextBox txtArea;
         private System.Windows.Forms.ComboBox cmboBxRace;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.ComboBox cmboBxClass;
         private System.Windows.Forms.Label lblAgeReq;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.TrackBar tbAge;
+        private System.Windows.Forms.Label lblAgeSlide;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnView;
     }
 }
 
