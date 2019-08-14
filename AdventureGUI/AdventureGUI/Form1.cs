@@ -42,12 +42,13 @@ namespace AdventureGUI
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
-   
+            consoleTb.Visible = false;
             cmboBxClass.Enabled = false;
             btnSubmit.Enabled = false;
             cmboBxRace.Enabled = false;
             tbAge.Enabled = false;
             btnView.Enabled = false;
+            btnNext.Enabled = false;
         }
 
         /// <summary>
@@ -369,6 +370,7 @@ namespace AdventureGUI
         /// <param name="e"></param>
         private void BtnReset_Click(object sender, EventArgs e)
         {
+            if(btnReset.Name == "btnReset")
             btnViewSpell.Visible = false;
             txtbxName.Clear();
             txtArea.Text = "You reset the character build.  Choose Wisley";
@@ -396,7 +398,9 @@ namespace AdventureGUI
         private void CmboBxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            btnNext.Enabled = true;
             btnSubmit.Enabled = true;
+            btnView.Enabled = true;
 
             if(cmboBxClass.Text == "Mage" || cmboBxClass.Text == "Cleric")
             {
@@ -498,14 +502,47 @@ namespace AdventureGUI
         }//end Button View Spell
 
         /// <summary>
-        /// Action event for Next Form
+        /// Action event for Next Form, 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void BtnNext_Click(object sender, EventArgs e)
         {
-         
+            lblTitle.Text = "Main Game";
+
+            //Set controls
+            txtArea.ResetText();
+            Controls.Remove(cmboBxClass);
+            Controls.Remove(cmboBxRace);
+            Controls.Remove(lblAgeReq);
+            Controls.Remove(lblAgeSlide);
+            Controls.Remove(lblClass);
+           
+            Controls.Remove(txtbxName);
+            Controls.Remove(lblName);
+            Controls.Remove(lblRace);
+            Controls.Remove(tbAge);
+
+            consoleTb.Visible = true;
+            consoleTb.SetBounds(10, 87, 535, 319);
+
+            
+            //Button Functions
+
+        
+            consoleTb.Text = "Welcome to the beginning of the game.";
+            
+
+            consoleTb.Text = "\nYou feel cold, and you're trying to open your eyes. You don't remember " +
+                "anything recent but you know your name is " + playerSheet.Name + "." +
+                "\nYou also remember that you are " + playerSheet.Age + " years old." + " " +
+                "Because of your age, you realize that you can only be a " + playerSheet.Race + ".";
         }
+
+
+
+      
+
     }// end Form
 
    

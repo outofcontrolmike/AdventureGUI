@@ -49,6 +49,7 @@
             this.btnView = new System.Windows.Forms.Button();
             this.btnViewSpell = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.consoleTb = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAge)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +58,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Viner Hand ITC", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(319, 9);
+            this.lblTitle.Location = new System.Drawing.Point(346, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(285, 52);
             this.lblTitle.TabIndex = 0;
@@ -106,12 +107,14 @@
             // txtArea
             // 
             this.txtArea.BackColor = System.Drawing.Color.Snow;
+            this.txtArea.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtArea.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtArea.ForeColor = System.Drawing.Color.Black;
-            this.txtArea.Location = new System.Drawing.Point(570, 92);
+            this.txtArea.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtArea.Location = new System.Drawing.Point(582, 87);
             this.txtArea.Name = "txtArea";
             this.txtArea.ReadOnly = true;
-            this.txtArea.Size = new System.Drawing.Size(356, 413);
+            this.txtArea.Size = new System.Drawing.Size(356, 322);
             this.txtArea.TabIndex = 7;
             this.txtArea.Text = "This is an interaction TextArea.  Certain parts of the form will display here dep" +
     "ending on your set up.";
@@ -139,9 +142,9 @@
             this.btnSubmit.FlatAppearance.BorderSize = 10;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnSubmit.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(401, 412);
+            this.btnSubmit.Location = new System.Drawing.Point(587, 415);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(127, 71);
+            this.btnSubmit.Size = new System.Drawing.Size(113, 71);
             this.btnSubmit.TabIndex = 11;
             this.btnSubmit.Text = "View Stats";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -214,9 +217,9 @@
             this.btnView.FlatAppearance.BorderSize = 10;
             this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnView.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnView.Location = new System.Drawing.Point(401, 335);
+            this.btnView.Location = new System.Drawing.Point(706, 415);
             this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(127, 71);
+            this.btnView.Size = new System.Drawing.Size(110, 71);
             this.btnView.TabIndex = 17;
             this.btnView.Text = "View Equipment";
             this.btnView.UseVisualStyleBackColor = true;
@@ -228,9 +231,9 @@
             this.btnViewSpell.FlatAppearance.BorderSize = 10;
             this.btnViewSpell.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnViewSpell.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewSpell.Location = new System.Drawing.Point(401, 258);
+            this.btnViewSpell.Location = new System.Drawing.Point(822, 415);
             this.btnViewSpell.Name = "btnViewSpell";
-            this.btnViewSpell.Size = new System.Drawing.Size(127, 71);
+            this.btnViewSpell.Size = new System.Drawing.Size(105, 71);
             this.btnViewSpell.TabIndex = 19;
             this.btnViewSpell.Text = "View Spells";
             this.btnViewSpell.UseVisualStyleBackColor = true;
@@ -251,12 +254,24 @@
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.BtnNext_Click);
             // 
+            // consoleTb
+            // 
+            this.consoleTb.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.consoleTb.ForeColor = System.Drawing.SystemColors.Window;
+            this.consoleTb.Location = new System.Drawing.Point(12, 2);
+            this.consoleTb.Name = "consoleTb";
+            this.consoleTb.ReadOnly = true;
+            this.consoleTb.Size = new System.Drawing.Size(143, 59);
+            this.consoleTb.TabIndex = 21;
+            this.consoleTb.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.ClientSize = new System.Drawing.Size(938, 517);
+            this.ClientSize = new System.Drawing.Size(950, 517);
+            this.Controls.Add(this.consoleTb);
             this.Controls.Add(this.lblAgeSlide);
             this.Controls.Add(this.tbAge);
             this.Controls.Add(this.lblAgeReq);
@@ -305,6 +320,7 @@
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnViewSpell;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.RichTextBox consoleTb;
     }
 }
 
