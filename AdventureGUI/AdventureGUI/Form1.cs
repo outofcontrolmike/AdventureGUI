@@ -13,7 +13,9 @@ using static System.Console;
 namespace AdventureGUI
 {
 
-
+    /// <summary>
+    /// A character set up Class
+    /// </summary>
     public partial class Form1 : Form
     {
 
@@ -33,7 +35,7 @@ namespace AdventureGUI
             InitializeComponent();
           
 
-        }
+        }//End Initilize
 
         /// <summary>
         /// What happens when form loads
@@ -42,14 +44,16 @@ namespace AdventureGUI
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
-            consoleTb.Visible = false;
             cmboBxClass.Enabled = false;
             btnSubmit.Enabled = false;
             cmboBxRace.Enabled = false;
             tbAge.Enabled = false;
             btnView.Enabled = false;
             btnNext.Enabled = false;
-        }
+            btnViewSpell.Enabled = false;
+
+
+        }//End FormLoad
 
         /// <summary>
         /// This Binds the name and Text area together for fun
@@ -79,11 +83,12 @@ namespace AdventureGUI
         {
             
             txtbxName.Enabled = false;
-            cmboBxClass.Enabled = false;
+            
             cmboBxRace.Enabled = false;
             btnSubmit.Enabled = false;
             tbAge.Enabled = false;
             btnView.Enabled = true;
+            btnViewSpell.Enabled = true;
             btnSubmit.Name = "Submit";
             
             if(cmboBxClass.Text == "Cleric")
@@ -317,7 +322,7 @@ namespace AdventureGUI
                            "\nArmor Equiped " + playerSheet.EquipedArmor;
 
 
-        }
+        }//End On Click
 
         
         
@@ -348,6 +353,12 @@ namespace AdventureGUI
 
             string race = cmboBxRace.Text;
             playerSheet.Race = race;
+
+                txtArea.Text = ("Hello ") + playerSheet.Name + ("!\nRace: "
+                    + race);
+
+            
+
         }// end Age
 
         /// <summary>
@@ -370,15 +381,16 @@ namespace AdventureGUI
         /// <param name="e"></param>
         private void BtnReset_Click(object sender, EventArgs e)
         {
-            if(btnReset.Name == "btnReset")
-            btnViewSpell.Visible = false;
-            txtbxName.Clear();
-            txtArea.Text = "You reset the character build.  Choose Wisley";
             
+            btnViewSpell.Visible = false;
+            txtArea.Clear();
+            txtbxName.Clear();   
+            txtArea.Text = "You reset the character build.  Choose Wisley";
+            cmboBxRace.Text = "";   
+
             cmboBxClass.SelectedIndex = -1;
             cmboBxRace.SelectedIndex = -1;
             tbAge.Text = "";
-           
 
             tbAge.Enabled = false;
             cmboBxClass.Enabled = false;
@@ -400,7 +412,8 @@ namespace AdventureGUI
 
             btnNext.Enabled = true;
             btnSubmit.Enabled = true;
-            btnView.Enabled = true;
+          
+            //btnSubmit.PerformClick();
 
             if(cmboBxClass.Text == "Mage" || cmboBxClass.Text == "Cleric")
             {
@@ -413,7 +426,12 @@ namespace AdventureGUI
                 btnViewSpell.Visible = false;
             }
 
-        }//end combo box for race
+            txtArea.Text = ("Hello ") + playerSheet.Name + ("!\nRace: ")
+                + playerSheet.Race + ("\nAge: ") + Convert.ToString(tbAge.Value) +
+                ("\nClass: " + cmboBxClass.Text) + 
+                "\n\nI'd suggest you View your stats before continuing.";
+
+        }//end combo box for class
 
       
         /// <summary>
@@ -425,6 +443,9 @@ namespace AdventureGUI
         {
             lblAgeSlide.Text = Convert.ToString(tbAge.Value);
             cmboBxClass.Enabled = true;
+
+            txtArea.Text = ("Hello ") + playerSheet.Name + ("!\nRace: ")
+                + playerSheet.Race + ("\nAge: ") + Convert.ToString(tbAge.Value);
         }
 
         /// <summary>
@@ -511,38 +532,24 @@ namespace AdventureGUI
             lblTitle.Text = "Main Game";
 
             //Set controls
-            txtArea.ResetText();
-            Controls.Remove(cmboBxClass);
-            Controls.Remove(cmboBxRace);
-            Controls.Remove(lblAgeReq);
-            Controls.Remove(lblAgeSlide);
-            Controls.Remove(lblClass);
+            
+            //Controls.Remove(cmboBxClass);
+            //Controls.Remove(cmboBxRace);
+            //Controls.Remove(lblAgeReq);
+            //Controls.Remove(lblAgeSlide);
+            //Controls.Remove(lblClass);
            
-            Controls.Remove(txtbxName);
-            Controls.Remove(lblName);
-            Controls.Remove(lblRace);
-            Controls.Remove(tbAge);
+            //Controls.Remove(txtbxName);
+            //Controls.Remove(lblName);
+            //Controls.Remove(lblRace);
+            //Controls.Remove(tbAge);
 
-            consoleTb.Visible = true;
-            consoleTb.SetBounds(10, 87, 535, 319);
+            MessageBox.Show("This is supposed to continue on to another program." +
+                "\nThis will be part 2 of the program. My text based version works.");
 
-            
-            //Button Functions
-
-        
-            consoleTb.Text = "Welcome to the beginning of the game.";
-            
-
-            consoleTb.Text = "\nYou feel cold, and you're trying to open your eyes. You don't remember " +
-                "anything recent but you know your name is " + playerSheet.Name + "." +
-                "\nYou also remember that you are " + playerSheet.Age + " years old." + " " +
-                "Because of your age, you realize that you can only be a " + playerSheet.Race + ".";
         }
 
-
-
-      
-
+   
     }// end Form
 
    

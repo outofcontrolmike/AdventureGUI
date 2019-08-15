@@ -45,11 +45,9 @@
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tbAge = new System.Windows.Forms.TrackBar();
             this.lblAgeSlide = new System.Windows.Forms.Label();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnView = new System.Windows.Forms.Button();
             this.btnViewSpell = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
-            this.consoleTb = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAge)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +86,7 @@
             // 
             this.lblClass.AutoSize = true;
             this.lblClass.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClass.Location = new System.Drawing.Point(300, 168);
+            this.lblClass.Location = new System.Drawing.Point(300, 233);
             this.lblClass.Name = "lblClass";
             this.lblClass.Size = new System.Drawing.Size(59, 31);
             this.lblClass.TabIndex = 4;
@@ -142,7 +140,7 @@
             this.btnSubmit.FlatAppearance.BorderSize = 10;
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnSubmit.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(587, 415);
+            this.btnSubmit.Location = new System.Drawing.Point(422, 428);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(113, 71);
             this.btnSubmit.TabIndex = 11;
@@ -156,7 +154,7 @@
             this.btnReset.FlatAppearance.BorderSize = 10;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnReset.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(158, 412);
+            this.btnReset.Location = new System.Drawing.Point(227, 428);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(120, 71);
             this.btnReset.TabIndex = 12;
@@ -174,7 +172,7 @@
             "Mage",
             "Theif",
             "Cleric"});
-            this.cmboBxClass.Location = new System.Drawing.Point(365, 168);
+            this.cmboBxClass.Location = new System.Drawing.Point(365, 233);
             this.cmboBxClass.Name = "cmboBxClass";
             this.cmboBxClass.Size = new System.Drawing.Size(162, 28);
             this.cmboBxClass.TabIndex = 10;
@@ -184,7 +182,7 @@
             // 
             this.lblAgeReq.AutoSize = true;
             this.lblAgeReq.Font = new System.Drawing.Font("Viner Hand ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgeReq.Location = new System.Drawing.Point(16, 168);
+            this.lblAgeReq.Location = new System.Drawing.Point(16, 233);
             this.lblAgeReq.Name = "lblAgeReq";
             this.lblAgeReq.Size = new System.Drawing.Size(88, 26);
             this.lblAgeReq.TabIndex = 13;
@@ -192,7 +190,7 @@
             // 
             // tbAge
             // 
-            this.tbAge.Location = new System.Drawing.Point(123, 168);
+            this.tbAge.Location = new System.Drawing.Point(123, 233);
             this.tbAge.Maximum = 100;
             this.tbAge.Minimum = 10;
             this.tbAge.Name = "tbAge";
@@ -205,7 +203,7 @@
             // 
             this.lblAgeSlide.AutoSize = true;
             this.lblAgeSlide.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAgeSlide.Location = new System.Drawing.Point(152, 207);
+            this.lblAgeSlide.Location = new System.Drawing.Point(152, 272);
             this.lblAgeSlide.Name = "lblAgeSlide";
             this.lblAgeSlide.Size = new System.Drawing.Size(67, 31);
             this.lblAgeSlide.TabIndex = 16;
@@ -217,7 +215,7 @@
             this.btnView.FlatAppearance.BorderSize = 10;
             this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnView.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnView.Location = new System.Drawing.Point(706, 415);
+            this.btnView.Location = new System.Drawing.Point(638, 428);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(110, 71);
             this.btnView.TabIndex = 17;
@@ -231,7 +229,7 @@
             this.btnViewSpell.FlatAppearance.BorderSize = 10;
             this.btnViewSpell.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnViewSpell.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewSpell.Location = new System.Drawing.Point(822, 415);
+            this.btnViewSpell.Location = new System.Drawing.Point(793, 425);
             this.btnViewSpell.Name = "btnViewSpell";
             this.btnViewSpell.Size = new System.Drawing.Size(105, 71);
             this.btnViewSpell.TabIndex = 19;
@@ -246,7 +244,7 @@
             this.btnNext.FlatAppearance.BorderSize = 10;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnNext.Font = new System.Drawing.Font("Viner Hand ITC", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(21, 412);
+            this.btnNext.Location = new System.Drawing.Point(49, 428);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(120, 71);
             this.btnNext.TabIndex = 20;
@@ -254,24 +252,12 @@
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.BtnNext_Click);
             // 
-            // consoleTb
-            // 
-            this.consoleTb.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.consoleTb.ForeColor = System.Drawing.SystemColors.Window;
-            this.consoleTb.Location = new System.Drawing.Point(12, 2);
-            this.consoleTb.Name = "consoleTb";
-            this.consoleTb.ReadOnly = true;
-            this.consoleTb.Size = new System.Drawing.Size(143, 59);
-            this.consoleTb.TabIndex = 21;
-            this.consoleTb.Text = "";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(950, 517);
-            this.Controls.Add(this.consoleTb);
             this.Controls.Add(this.lblAgeSlide);
             this.Controls.Add(this.tbAge);
             this.Controls.Add(this.lblAgeReq);
@@ -316,11 +302,9 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.TrackBar tbAge;
         private System.Windows.Forms.Label lblAgeSlide;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnViewSpell;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.RichTextBox consoleTb;
     }
 }
 
