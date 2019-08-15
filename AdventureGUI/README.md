@@ -1,17 +1,17 @@
-# Programming Survey Form - Window's Form's
+# Character Design - Window's Form's
 
-The point of this program is to utilize capabilitties of the Visual Studio's Windows Form template to create a Programming Survey Form
+The point of this program is to utilize capabilitties of the Visual Studio's Windows Form template to set up a Character design page for a text based game.
 
 ## Example Output
 
 ![Sample Output](README.jpg)
 
 ## Analysis Steps
-Main - Create a Survey form that's realted to Programming.
+Main - Create a Character Design Form for setting up a character.
 	1)  Start with a Wireframe 
 	2)  Start dragging and dropping controls based on the Window's design.
-	3)  Make sure to implement on click for submit button and checkboxes/radio buttons
-	4)  Text Area needs to display what the user clicked/typed in. 
+	3)  Make sure logic and functionallity work well
+	4)  Make sure Objects are built and displayed correctly.
 
 ### Design
 
@@ -19,7 +19,9 @@ How did you approach your program design? Did you use multiple classes to define
 
 
 ```
-There are two files used.  One is the logic for the action events and the other is for all of code related to the controls placed on the form, built behind the scene.
+There are a few object classes that build the character stats, weapons, armor and spells.  Eventually items will work.  
+
+Also there is the main windows form class that handles the logic for the controls.
 
 ```
 
@@ -39,9 +41,10 @@ Set up logic for when a user doesn't enter information in.
 
 ## Notes
 
-There could have been more error handling - I could have not let the user click the submit button unless all the fields had information in them. 
+I wasn't sure how to transition from one form to another and save all the object information... I think it would have been nice to
+use a form as a console and play the script of the game from there.
 
-The resizeabillity of the web page is a problem.  the elements of the page aren't programmed to fit correctly with resizing. 
+Otherwise this is a fairly simple Character set up page.
 
 ## Do not change content below this line
 ## Adapted from a README Built With
